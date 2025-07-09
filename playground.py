@@ -2,25 +2,37 @@ import os
 from datetime import datetime
 from flask import Flask, render_template, jsonify, request, redirect, url_for, flash
 from flask_login import login_user, LoginManager, login_required, current_user, logout_user
+from flask_mail import Message
 from werkzeug.security import generate_password_hash, check_password_hash
 from dotenv import load_dotenv
 from models import db, Playground, DidYouKnow, Hypotheticals, HotTakes, NeverHaveIEver
 from models import WouldYouRather, StoryBuilder, Riddle, TwoTruthsAndALie
 from models import User
-import smtplib
+from extensions import mail
 import logging
-from email.message import EmailMessage
 from sqlalchemy.sql.expression import func
 from utils.helpers import (get_game_by_type, return_error_for_wrong_params,
-                           get_game_to_type_mapping, get_api_key, require_api_key)
+                           get_game_to_type_mapping, get_api_key, require_api_key, send_api_key)
 from sqlalchemy.exc import IntegrityError
 
 app = Flask(__name__)
 
 load_dotenv()
+
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('SQLALCHEMY_DATABASE_URI')
 app.secret_key = os.getenv('SECRET_KEY')
+
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USERNAME'] = os.getenv('SENDER_EMAIL_ADDRESS')
+app.config['MAIL_PASSWORD'] = os.getenv('SENDER_APP_PASSWORD')
+app.config['MAIL_DEFAULT_SENDER'] = os.getenv('SENDER_EMAIL_ADDRESS')
+
 db.init_app(app)
+
+mail.init_app(app)
+
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'login'
@@ -63,7 +75,7 @@ def get_all_game_types():
 @require_api_key
 def get_random_game():
     game_type = request.args.get('game_type')
-    error_response = return_error_for_wrong_params(game_type)
+    error_response = return_error_for_wrong_params(game_type, limit=1)
     if error_response:
         error, status_code = error_response
         return jsonify(error), status_code
@@ -135,8 +147,6 @@ def get_by_type():
 def suggest():
     admin_users = User.query.filter_by(role='admin').all()
     admin_emails = [admin.email for admin in admin_users]
-    sender_email = os.getenv('ADMIN_EMAIL_1')
-    sender_password = os.getenv('SENDER_APP_PASSWORD')
 
     if request.method == 'POST':
         suggestion_title = request.form.get('title')
@@ -148,57 +158,78 @@ def suggest():
             if suggestion_use_case_example
             else "No use case example provided."
         )
-        msg = EmailMessage()
-        msg['Subject'] = 'Suggestion For Playground API'
-        msg['From'] = sender_email
-        msg['To'] = ', '.join(admin_emails)  # multiple recipients
-        msg.set_content(
-            f"""Suggestion title: {suggestion_title}
-            Description: {suggestion_description}
-            Type: {suggestion_type}
-            Use case example: {use_case_text}
-            """
-        )
-        smtp_server = 'smtp.gmail.com'
-        smtp_port = 587
+        email_body = f"""Suggestion title: {suggestion_title}
+                        Description: {suggestion_description}
+                        Type: {suggestion_type}
+                        Use case example: {use_case_text}"""
         try:
-            with smtplib.SMTP(smtp_server, smtp_port) as server:
-                server.starttls()
-                server.login(sender_email, sender_password)
-                server.send_message(msg)
-                flash("✅ Suggestion sent successfully!", )
+            msg = Message(subject='Suggestion For Playground API',
+                          recipients=admin_emails,
+                          body=email_body)
+            mail.send(msg)
+            flash('Suggestion sent successfully')
+        except Exception as e:
+            logging.exception(f'Failed to send suggestion email: {e}')
+            flash('Failed to send suggestion. Please try again later.')
+        return redirect(url_for('home'))
 
-        except smtplib.SMTPException as e:
-            logging.exception(f"Failed to send suggestion email, {e}")
-            print(f"Failed to send suggestion email, {e}")
-            flash("❌ Failed to send suggestion. Please try again later.", )
-        else:
-            return redirect(url_for('home'))
     return render_template('suggestions.html')
 
 
 @app.route('/sign-up', methods=['GET', 'POST'])
+@app.route('/sign-up', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+        username = request.form['username']
+
         # 🔹 Check if the email is already registered
-        existing_user = User.query.filter_by(email=request.form['email']).first()
+        existing_user = User.query.filter_by(email=email).first()
         if existing_user:
-            flash('You are registered login instead')
+            flash('You are already registered. Please log in instead.')
             return redirect(url_for('login'))
-        # 🔹 Create new user
-        new_user = User(email=request.form['email'],
-                        password=generate_password_hash(request.form['password']),
-                        username=request.form['username'])
-        # 🔹 Give an admin role to specific emails
-        if new_user.email in [os.getenv('ADMIN_EMAIL_1'), os.getenv('ADMIN_EMAIL_2'),
-                              os.getenv('ADMIN_EMAIL_3'), ]:
-            new_user.role = 'admin'
-            flash('Welcome admin')
-        db.session.add(new_user)
-        db.session.commit()
-        return redirect(url_for('login'))
+        # 🔹 Try creating a user with a unique API key
+        for _ in range(3):
+            try:
+                new_user = User(
+                    email=email,
+                    password=generate_password_hash(password),
+                    username=username,
+                    api_key=get_api_key()
+                )
+                # Give admin role if applicable
+                if new_user.email in [
+                    os.getenv('ADMIN_EMAIL_1'),
+                    os.getenv('ADMIN_EMAIL_2'),
+                    os.getenv('ADMIN_EMAIL_3'),
+                ]:
+                    new_user.role = 'admin'
+                    flash('Welcome, Admin!')
+
+                db.session.add(new_user)
+                db.session.commit()
+                # Send API key by email
+                try:
+                    send_api_key(new_user.email, new_user.api_key)
+                    flash('Registration successful. Check your email for your API key!')
+                    return redirect(url_for('login'))
+                except Exception as e:
+                    print('Failed', e)
+                    flash('Mail failed to send. Check Profile for your API key.')
+
+            except IntegrityError:
+                db.session.rollback()
+                with open('error_log.txt', 'a') as f:
+                    timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                    print(f"[{timestamp}] Failed to create user due to API key collision.", file=f)
+
+        # If all 3 tries failed
+        flash("Sorry, we couldn't generate a unique API key. Try again later.")
+        return redirect(url_for('register'))
 
     return render_template('register.html')
+
 
 
 @app.route('/sign-in', methods=['GET', 'POST'])
@@ -218,21 +249,6 @@ def login():
 @app.route('/profile')
 @login_required
 def profile():
-    if not current_user.api_key:
-        for _ in range(3):
-            try:
-                current_user.api_key = get_api_key()
-                db.session.commit()
-                break
-            # except get_api_key() returns one it has returned before, since that is marked as unique
-            except IntegrityError:
-                db.session.rollback()
-                with open('error_log.txt', 'a') as f:
-                    timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-                    print(f"[{timestamp}] Failed to create user {current_user.id}'s api key "
-                          f"'cause of Integrity errors", file=f)
-        else:
-            print('Integrity error')
     return render_template('profile.html')
 
 

@@ -2,7 +2,10 @@ from sqlalchemy.sql import func
 import secrets
 from functools import wraps
 from flask import request, jsonify
-from sayit_playground_api.models import User
+from models import User
+from flask_mail import Message
+from flask import current_app
+from extensions import mail
 
 
 def is_positive_int(s):
@@ -46,6 +49,7 @@ def return_error_for_wrong_params(game_type, limit):
     with the appropriate HTTP status code.
 
     Parameters:
+        limit: (int): the maximum number of responses to be returned
         game_type (str | None): The value of the 'game_type' query parameter.
 
     Returns:
@@ -139,4 +143,22 @@ def require_api_key(f):
 
     return decorated
 
-# print(int())
+
+def send_api_key(user_email, api_key):
+    subject = "🎉 Your Playground API Key"
+    body = f"""Hey there!
+
+    Thanks for registering for the Playground API.
+    You are receiving this email to confirm the creation of an 
+    API key. If you did not request this, please disregard this email.
+    Here is your personal API key for {user_email}:
+    {api_key}
+
+    Please keep it secure. You'll need it for every request.
+
+    – The Playground Team
+    """
+
+    msg = Message(subject=subject, recipients=[user_email], body=body)
+    with current_app.app_context():
+        mail.send(msg)
