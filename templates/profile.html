@@ -11,17 +11,17 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../static/styles/main.css" />
-     <link
-      rel="icon"
-      type="image/png"
-      href="../static/logo-mono.png"
-    />
+    <link rel="icon" type="image/png" href="../static/styles/logo-mono.png" />
     <title>sayIt API | Profile</title>
   </head>
   <body>
     <div class="form-container">
       <main class="profile auth">
-        <form class="profile__form auth__form" action="{{url_for('update_profile')}}" method="post">
+        <form
+          class="profile__form auth__form"
+          action="{{url_for('update_profile')}}"
+          method="post"
+        >
           <h2 class="profile__title auth__title">Profile</h2>
           <div class="profile__form-group form-group">
             <label for="email" class="profile__form-label form-group__label"
@@ -35,7 +35,11 @@
               placeholder="Enter your email"
               value="{{current_user.email}}"
             />
-            <button type="submit" class="profile__form-button auth__submit-btn" name="update_email">
+            <button
+              type="submit"
+              class="profile__form-button auth__submit-btn"
+              name="update_email"
+            >
               Update Email Address
             </button>
           </div>
@@ -58,13 +62,10 @@
             >
               Change Password
             </button>
-            {% with messages = get_flashed_messages() %}
-              {% if messages %}
-                {% for message in messages %}
-                  <div style="color: #ffb800; font-size: 0.8rem">{{ message }}</div>
-                {% endfor %}
-              {% endif %}
-            {% endwith %}
+            {% with messages = get_flashed_messages() %} {% if messages %} {%
+            for message in messages %}
+            <div style="color: #ffb800; font-size: 0.8rem">{{ message }}</div>
+            {% endfor %} {% endif %} {% endwith %}
           </div>
           <div class="profile__form-group input-section field-label">
             <label for="apiKey" class="profile__form-label form-group__label"
