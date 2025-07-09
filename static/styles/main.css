@@ -208,11 +208,7 @@ select {
   margin-block-end: var(--space-sm);
   line-height: 1.2;
   text-align: left;
-  background: linear-gradient(
-    45deg,
-    var(--quaternary-light),
-    var(--tertiary-rose)
-  );
+  background: linear-gradient(45deg, var(--quaternary-light), var(--tertiary-rose));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -227,7 +223,7 @@ select {
 
 .documentation__subtitle {
   font-size: 1.2rem;
-  text-align: center;
+  text-align: left;
   color: var(--text-secondary);
   color: #c7a5b0;
 }
@@ -374,12 +370,7 @@ select {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: linear-gradient(
-    45deg,
-    transparent,
-    rgba(244, 204, 233, 0.1),
-    transparent
-  );
+  background: linear-gradient(45deg, transparent, rgba(244, 204, 233, 0.1), transparent);
   z-index: -1;
   animation: rotate 10s linear infinite;
 }
@@ -657,11 +648,7 @@ select {
 }
 
 .highlight-box {
-  background: linear-gradient(
-    45deg,
-    rgba(86, 2, 31, 0.2),
-    rgba(125, 28, 74, 0.2)
-  );
+  background: linear-gradient(45deg, rgba(86, 2, 31, 0.2), rgba(125, 28, 74, 0.2));
   border-left: 4px solid var(--tertiary-rose);
 }
 .highlight-box p strong i {
@@ -674,11 +661,7 @@ select {
 }
 
 .warning-box {
-  background: linear-gradient(
-    45deg,
-    rgba(255, 165, 0, 0.1),
-    rgba(255, 69, 0, 0.1)
-  );
+  background: linear-gradient(45deg, rgba(255, 165, 0, 0.1), rgba(255, 69, 0, 0.1));
   border-left: 4px solid #ff6b35;
 }
 .warning-box p strong i {
@@ -794,11 +777,7 @@ select {
 .hero__btn {
   display: inline-block;
   padding: 0.9rem 2.7rem;
-  background: linear-gradient(
-    135deg,
-    var(--tertiary-rose),
-    var(--quaternary-light)
-  );
+  background: linear-gradient(135deg, var(--tertiary-rose), var(--quaternary-light));
   color: var(--primary-dark);
   border-radius: 36px;
   font-weight: 700;
@@ -809,11 +788,7 @@ select {
   transition: all 0.5s ease;
 }
 .hero__btn:hover {
-  background: linear-gradient(
-    135deg,
-    var(--quaternary-light),
-    var(--tertiary-rose)
-  );
+  background: linear-gradient(135deg, var(--quaternary-light), var(--tertiary-rose));
   box-shadow: 0 12px 35px rgba(209, 125, 152, 0.5);
   transform: translateY(-4px);
 }
@@ -852,11 +827,7 @@ select {
 .submit-button {
   width: 100%;
   cursor: pointer;
-  background: linear-gradient(
-    135deg,
-    var(--accent-rose) 0%,
-    var(--secondary-dark) 100%
-  );
+  background: linear-gradient(135deg, var(--accent-rose) 0%, var(--secondary-dark) 100%);
   color: var(--text-primary);
   padding: var(--space-xs) var(--space-sm);
   border-radius: 13px;
@@ -871,12 +842,7 @@ select {
 .submit-button::before {
   content: "";
   width: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
   height: 100%;
   top: 0;
   left: -100%;
@@ -940,8 +906,7 @@ select {
   padding: 2.5rem 2rem;
   border-radius: 1.5rem;
   transition: all 0.3s ease;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5),
-    0 0 0 1px rgba(255, 255, 255, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 .auth__form::before {
   content: "";
@@ -951,12 +916,7 @@ select {
   width: 100%;
   height: 100%;
   transition: left 0.5s;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.1),
-    transparent
-  );
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
 }
 @media (max-width: 480px) {
   .auth__form::before {
@@ -964,8 +924,7 @@ select {
   }
 }
 .auth__form:hover {
-  box-shadow: 0 35px 70px -12px rgba(0, 0, 0, 0.6),
-    0 0 0 1px rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  box-shadow: 0 35px 70px -12px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.15);
   transform: translateY(-5px);
 }
 .auth__form:hover::before {
@@ -975,11 +934,7 @@ select {
   font-size: 1.6rem;
   font-weight: 700;
   text-align: center;
-  background: linear-gradient(
-    135deg,
-    var(--text-primary),
-    var(--tertiary-rose)
-  );
+  background: linear-gradient(135deg, var(--text-primary), var(--tertiary-rose));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1107,8 +1062,7 @@ select {
   outline: none;
   border-color: var(--accent-teal);
   background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 0 20px rgba(20, 184, 166, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(20, 184, 166, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   transform: translateY(-2px);
 }
 .form-group:focus-within .form-group__label {
@@ -1191,8 +1145,7 @@ select {
   }
 }
 
-.text-field.form-group__input::-moz-placeholder,
-.textarea-field::-moz-placeholder {
+.text-field.form-group__input::-moz-placeholder, .textarea-field::-moz-placeholder {
   font-size: 1rem;
   color: var(--text-muted);
   font-style: italic;
@@ -1208,11 +1161,9 @@ select {
 .dropdown-field {
   cursor: pointer;
   -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: rgba(255, 255, 255, 0.02)
-    url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2314b8a6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e")
-    no-repeat right 16px center;
+     -moz-appearance: none;
+          appearance: none;
+  background: rgba(255, 255, 255, 0.02) url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2314b8a6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e") no-repeat right 16px center;
   background-size: 20px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
@@ -1245,22 +1196,14 @@ select {
   border: 1px solid var(--rose-glass-border);
 }
 .textarea-field::-webkit-scrollbar-thumb {
-  background: linear-gradient(
-    135deg,
-    var(--accent-rose) 0%,
-    var(--secondary-dark) 100%
-  );
+  background: linear-gradient(135deg, var(--accent-rose) 0%, var(--secondary-dark) 100%);
   border-radius: 6px;
   border: 1px solid var(--rose-glass-border);
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 .textarea-field::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(
-    135deg,
-    var(--secondary-dark) 0%,
-    var(--accent-rose) 100%
-  );
+  background: linear-gradient(135deg, var(--secondary-dark) 0%, var(--accent-rose) 100%);
   box-shadow: 0 0 8px var(--accent-rose-glow);
 }
 .textarea-field::-webkit-scrollbar-thumb:active {
@@ -1296,4 +1239,4 @@ select {
 .profile__cta-link.auth__link:hover::before {
   width: 100%;
   background-color: var(--accent-rose);
-} /*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */

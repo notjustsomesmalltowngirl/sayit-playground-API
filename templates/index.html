@@ -10,11 +10,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../static/styles/main.css" />
-     <link
-      rel="icon"
-      type="image/png"
-      href="../static/styles/logo-mono.png"
-    />
+    <link rel="icon" type="image/png" href="../static/styles/logo-mono.png" />
     <title>sayIt Playground API</title>
   </head>
   <body>
@@ -29,7 +25,9 @@
               <a href="#" class="nav__link">Home</a>
             </li>
             <li class="nav__item">
-              <a href="{{url_for('docs_page')}}" class="nav__link">Documentation</a>
+              <a href="{{url_for('docs_page')}}" class="nav__link"
+                >Documentation</a
+              >
             </li>
             {% if not current_user.is_authenticated %}
             <li class="nav__item">
