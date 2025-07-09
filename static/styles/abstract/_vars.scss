@@ -1,0 +1,39 @@
+:root {
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 2.5rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-4xl: 5rem;
+
+  --font-primary: "Inter", sans-serif;
+  --font-headings: "Roboto", sans-serif;
+}
+:root {
+  --primary-dark: rgb(86, 2, 31);
+  --secondary-dark: rgb(125, 28, 74);
+  --tertiary-rose: #d17d98;
+  --quaternary-light: #f4cce9;
+  --dark-bg: #0d0a0b;
+  --darker-bg: #050203;
+  --text-primary: #ffffff;
+  --accent-gold: #ffb800;
+  --accent-teal: #14b8a6;
+  --text-secondary: #c7a5b0;
+
+  --accent-rose: #d17d98;
+  --accent-rose-glow: rgba(209, 125, 152, 0.3);
+  --rose-glass: rgba(209, 125, 152, 0.08);
+  --rose-glass-border: rgba(209, 125, 152, 0.12);
+  --rose-glass-hover: rgba(209, 125, 152, 0.15);
+  --text-primary: #ffffff;
+  --text-secondary-suggest: rgba(255, 255, 255, 0.8);
+  --text-muted: rgba(255, 255, 255, 0.6);
+
+  --glass-ultra-light: rgba(255, 255, 255, 0.02);
+  --glass-light: rgba(255, 255, 255, 0.04);
+  --glass-medium: rgba(255, 255, 255, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.05);
+}

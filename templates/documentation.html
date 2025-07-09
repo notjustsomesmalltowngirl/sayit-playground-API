@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/styles/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../static/styles/main.css" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="../static/logo-mono.png"
+    />
+    <title>sayIt Playground API | Documentation</title>
+  </head>
+
+  <body class="documentation">
+    <header class="documentation-header__content">
+      <div class="container">
+        <h1 class="documentation__title">Documentation</h1>
+        <p class="documentation__subtitle">
+          Complete guide to our API endpoints and authentication
+        </p>
+      </div>
+    </header>
+    <main class="documentation__main">
+      <div class="container">
+        <section class="getting-started__section documentation__section">
+          <h2 class="getting-started__title title">Getting Started</h2>
+          <p class="getting-started__description description">
+            Welcome to the sayIt Playground API documentation. This guide will
+            help you seamlessly integrate fun games and trivia into your
+            applications. Our API uses JSON for data exchange, making it
+            easy and efficient to add engaging features to your projects.
+          </p>
+          <p class="getting-started__description description">
+            The Playground API provides a wide variety of interactive games,
+            trivia questions, and entertainment endpoints, allowing you to
+            quickly add playful and engaging experiences to your websites and
+            apps with simple HTTP requests.
+          </p>
+          <h3 class="getting-started__subtitle subtitle">Your API Key</h3>
+          <p class="getting-started__description description">
+            You need an API key to use the API—this is a unique key that
+            identifies your requests.
+          </p>
+          <a href="{{ url_for('profile') }}" class="get-button hero__btn">Get API Key</a>
+          <div class="highlight-box">
+            <p>
+              <strong><i class="fa-solid fa-circle-exclamation"></i></strong> An
+              API key can only be assigned to you after you have created an
+              account. If you are logged in, you will see your live API key in
+              all the examples.
+            </p>
+          </div>
+          <h3 class="getting-started__subtitle subtitle">Base URL</h3>
+          <p class="getting-started__description description">
+            All API requests should be made to the following base URL:
+          </p>
+          <div class="code-block" data-lang="url">
+            <pre><code>http://127.0.0.1:5000/api/v1/</code></pre>
+          </div>
+          <div class="highlight-box">
+            <p>
+              <strong><i class="fa-solid fa-circle-exclamation"></i></strong>
+              All API responses are returned in JSON format with UTF-8 encoding.
+            </p>
+          </div>
+        </section>
+        <section class="authentication documentation__section">
+          <h2 class="authentication__title title">Authentication</h2>
+          <p class="authentication__description description">
+            Authentication is handled with a simple API key. You can get one here:
+          </p>
+          <a href="{{ url_for('profile') }}" class="get-button hero__btn">Get API Key</a>
+
+          <h3 class="authentication__subtitle subtitle">
+            API Key Authentication
+          </h3>
+          <h5 class="authentication__subtitle--way subtitle">
+            Via Querystring
+          </h5>
+          <div class="code-block" data-lang="URL">
+            <pre><code><span class="highlight-word">GET</span> https://127.0.0.1:5000/api/v1/all-game-types?api_key=<span class="highlight-word">{{api_key}}</span></code></pre>
+          </div>
+          <h5 class="authentication__subtitle--way subtitle">
+            Via X-Api-Key HTTP header
+          </h5>
+          <div class="code-block" data-lang="URL">
+            <pre><code>X-Api-Key: <span class="highlight-word">{{api_key}}</span></code></pre>
+          </div>
+          <h5 class="authentication__subtitle--way subtitle">
+            Via Authorization HTTP header
+          </h5>
+          <div class="code-block" data-lang="URL">
+            <pre><code>Authorization: <span class="highlight-word">{{api_key}}</span></code></pre>
+          </div>
+          <div class="highlight-box">
+            <p>
+              <strong><i class="fa-solid fa-circle-exclamation"></i></strong> An
+              Via the <code>Authorization</code> HTTP header. Including
+              <code>Bearer</code> is optional, and be sure not to base 64 encode
+              it like you may have seen in other authentication tutorials
+            </p>
+          </div>
+          <div class="warning-box">
+            <p>
+              <strong><i class="fa-solid fa-triangle-exclamation"></i></strong>
+              If you don't append your API key correctly, or your API key is
+              invalid, you will receive a <code>401 - Unauthorized</code> HTTP
+              error.
+            </p>
+          </div>
+        </section>
+        <section class="endpoints documentation__section">
+          <h2 class="endpoints__title title">🎮 Playground API Endpoints</h2>
+          <p class="endpoints__description description">
+            Playground API has three endpoints:
+          </p>
+          <h5 class="authentication__subtitle--way subtitle">
+            GET <code>/api/v1/all-game-types</code>
+          </h5>
+          <p class="endpoints__description description">
+            Returns a list of all available game types (e.g., Would You Rather, Never Have I Ever,
+            Trivia, Did You Know, etc.) currently supported by the API.
+          </p>
+          <h5 class="authentication__subtitle--way subtitle">
+            GET <code>/api/v1/get-random?game_type=...</code>
+          </h5>
+          <p class="endpoints__description description">
+            Returns a single random game from the type specified in the query
+            (e.g., one Trivia or one Would You Rather question).          </p>
+          <h5 class="authentication__subtitle--way subtitle">
+            GET <code>/api/v1/get-by-type?game_type=...</code>
+          </h5>
+          <p class="endpoints__description description">
+            Returns a list of games of the specified type.
+            Useful when you want
+            to fetch multiple entries from a specific category.
+          </p>
+          <h2 class="endpoints__subtitle subtitle">Query Parameters</h2>
+          <div class="table-container">
+            <table class="parameter-table">
+              <thead class="parameter-table__header">
+                <tr class="parameter-table__row parameter-table__row--header">
+                  <th
+                    class="parameter-table__cell parameter-table__cell--header"
+                  >
+                    Parameter
+                  </th>
+                  <th
+                    class="parameter-table__cell parameter-table__cell--header"
+                  >
+                    Type
+                  </th>
+                  <th
+                    class="parameter-table__cell parameter-table__cell--header hidden-mobile"
+                  >
+                    Description
+                  </th>
+                  <th
+                    class="parameter-table__cell parameter-table__cell--header"
+                  >
+                    Required
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="parameter-table__body">
+                <tr class="parameter-table__row">
+                  <td class="parameter-table__cell">api_key</td>
+                  <td class="parameter-table__cell">str</td>
+                  <td class="parameter-table__cell hidden-mobile">
+                    Your unique API Key
+                  </td>
+                  <td class="parameter-table__cell">Yes</td>
+                </tr>
+                <tr class="parameter-table__row">
+                  <td class="parameter-table__cell">game_type</td>
+                  <td class="parameter-table__cell">string</td>
+                  <td class="parameter-table__cell hidden-mobile">
+                Specifies the type of game to fetch (e.g., Would You Rather, Trivia, Did You Know).</td>
+                  <td class="parameter-table__cell"> Yes — for all endpoints except <pre><code>/api/v1/all-game-types</code></pre></td>
+                </tr>
+                <tr class="parameter-table__row">
+                  <td class="parameter-table__cell">category</td>
+                  <td class="parameter-table__cell">string</td>
+                  <td class="parameter-table__cell hidden-mobile">
+                    Optional subtype filter (e.g., fun, science) to specify the style or theme of the game
+                  </td>
+                  <td class="parameter-table__cell">No</td>
+                </tr>
+                <tr class="parameter-table__row">
+                  <td class="parameter-table__cell">limit</td>
+                  <td class="parameter-table__cell">int</td>
+                  <td class="parameter-table__cell hidden-mobile">
+                    	Maximum number of games to return in the response
+                  </td>
+                  <td class="parameter-table__cell">No</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="error__section documentation__section">
+          <h2 class="error__title title">Error Handling</h2>
+          <p class="error__description description">
+            If you make a bad request we'll let you know by returning a relevant
+            HTTP status code along with more details in the body.
+          </p>
+          <h3 class="subtitle">HTTP Status Codes</h3>
+         <div class="highlight-box">
+  <p class="error__text">
+    <span class="status-badge status-success">200 OK</span> –
+    The request was successful and the response contains the expected data.
+  </p>
+  <p class="error__text">
+    <span class="status-badge status-warning">400 Bad Request</span> –
+    The request was malformed or missing required parameters.
+  </p>
+  <p class="error__text">
+    <span class="status-badge status-warning">401 Unauthorized</span> –
+    Authentication is required or the provided API key is missing or invalid.
+  </p>
+<!--  <p class="error__text">-->
+<!--    <span class="status-badge status-error">403 Forbidden</span> –-->
+<!--    The API key is valid but does not have permission to access this resource.-->
+<!--  </p>-->
+  <p class="error__text">
+    <span class="status-badge status-error">404 Not Found</span> –
+    The requested resource or endpoint could not be found.
+  </p>
+  <p class="error__text">
+    <span class="status-badge status-warning">422 Unprocessable Entity</span> –
+    The request was well-formed but contains invalid data (e.g., unsupported game type).
+  </p>
+  <p class="error__text">
+    <span class="status-badge status-error">500 Internal Server Error</span> –
+    An unexpected error occurred on the server.
+  </p>
+</div>
+
+          <h3 class="subtitle">Common Error Codes</h3>
+          <div class="table-container">
+            <table class="parameter-table">
+              <thead class="parameter-table__header">
+                <tr class="parameter-table__row parameter-table__row--header">
+                  <th
+                    class="parameter-table__cell parameter-table__cell--header"
+                  >
+                    Code
+                  </th>
+                  <th
+                    class="parameter-table__cell parameter-table__cell--header"
+                  >
+                    Description
+                  </th>
+                  <th
+                    class="parameter-table__cell parameter-table__cell--header hidden-mobile"
+                  >
+                    HTTP Status
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="parameter-table__body">
+               <tr class="parameter-table__row">
+  <td class="parameter-table__cell">missing_params</td>
+  <td class="parameter-table__cell">
+    A required parameter was not provided in the request.
+  </td>
+  <td class="parameter-table__cell hidden-mobile">400</td>
+</tr>
+<tr class="parameter-table__row">
+  <td class="parameter-table__cell">invalid_param_value</td>
+  <td class="parameter-table__cell">
+    A provided parameter has an invalid or unsupported value.
+  </td>
+  <td class="parameter-table__cell hidden-mobile">422</td>
+</tr>
+<tr class="parameter-table__row">
+  <td class="parameter-table__cell">api_key_missing</td>
+  <td class="parameter-table__cell">
+    The request is missing an API key. Authentication is required.
+  </td>
+  <td class="parameter-table__cell hidden-mobile">401</td>
+</tr>
+<tr class="parameter-table__row">
+  <td class="parameter-table__cell">api_key_invalid</td>
+  <td class="parameter-table__cell">
+    The provided API key is invalid or incorrect.
+  </td>
+  <td class="parameter-table__cell hidden-mobile">401</td>
+</tr>
+<tr class="parameter-table__row">
+  <td class="parameter-table__cell">invalid_param_type</td>
+  <td class="parameter-table__cell">
+    A parameter has an invalid type or cannot be converted to the expected type.
+  </td>
+  <td class="parameter-table__cell hidden-mobile">422</td>
+</tr>
+
+
+              </tbody>
+            </table>
+          </div>
+           <div class="highlight-box">
+            <p>
+  <strong><i class="fa-solid fa-circle-exclamation"></i> Note:</strong>
+  The following are the only valid <code>game_type</code> values currently supported
+  (case-insensitive — you can use lowercase or any casing):
+  {% for type in valid_types %}
+    <code>{{ type }}</code>
+  {% endfor %}.
+  Any other value will result in an <code>invalid_param_value</code> error.
+</p>
+
+          </div>
+        </section>
+
+        <section class="examples documentation__section">
+         <h2 class="examples__title title">Examples</h2>
+<p class="examples__description description">
+  Below are some complete examples demonstrating how to use the API in different scenarios.
+</p>
+
+<h5 class="authentication__subtitle--way subtitle">
+  Fetching games when <code>game_type="hot takes"</code> and <code>limit=3</code>
+</h5>
+
+<div class="code-block" data-lang="python">
+  <pre><code>
+import requests
+
+response = requests.get(
+    "http://127.0.0.1:5000/api/v1/get-by-type?api_key={{api_key}}&game_type=hot%20takes&limit=3"
+)
+print(response.json())
+  </code></pre>
+
+  <pre><code>
+{
+  "hot_takes": [
+    {
+      "category": "social",
+      "opinion": "Not everyone needs to have a strong opinion."
+    },
+    {
+      "category": "technology",
+      "opinion": "Apple is more about image than innovation."
+    },
+    {
+      "category": "pop_culture",
+      "opinion": "Remakes rarely improve on the original."
+    }
+  ]
+}
+  </code></pre>
+</div>
+
+         <h5 class="authentication__subtitle--way subtitle">
+  Getting all available game types
+</h5>
+
+<div class="code-block" data-lang="python">
+  <pre><code>
+import requests
+
+response = requests.get(
+    "http://127.0.0.1:5000/api/v1/all-game-types?api_key={{api_key}}"
+)
+
+print(response.json())
+  </code></pre>
+
+  <pre><code>
+{
+  "all_games": [
+    "did you know",
+    "hypotheticals",
+    "hot takes",
+    "never have i ever",
+    "would you rather",
+    "story builder",
+    "riddles",
+    "two truths and a lie"
+  ]
+}
+  </code></pre>
+</div>
+
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; {{ current_year }} API Documentation. All rights reserved.</p>
+        <p>
+          For support, contact:
+          <a
+            href="mailto:olukayodepeace2006@gmail.com"
+            style="color: var(--tertiary-rose)"
+            >olukayodepeace2006@gmail.com</a
+          >
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

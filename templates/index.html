@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../static/styles/main.css" />
+     <link
+      rel="icon"
+      type="image/png"
+      href="../static/logo-mono.png"
+    />
+    <title>sayIt Playground API</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="header__nav nav">
+        <div class="nav__content container">
+          <div class="nav__logo">
+            <a href="#" class="nav__logo-link">sayIt API</a>
+          </div>
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#" class="nav__link">Home</a>
+            </li>
+            <li class="nav__item">
+              <a href="{{url_for('docs_page')}}" class="nav__link">Documentation</a>
+            </li>
+            {% if not current_user.is_authenticated %}
+            <li class="nav__item">
+              <a href="{{url_for('login')}}" class="nav__link">Sign In</a>
+            </li>
+            <li class="nav__item">
+              <a href="{{url_for('register')}}" class="nav__link">Sign Up</a>
+            </li>
+            {% else %}
+            <li class="nav__item">
+              <a href="{{url_for('suggest')}}" class="nav__link">Suggest</a>
+            </li>
+            <li class="nav__item">
+              <a href="{{url_for('logout')}}" class="nav__link">Log Out</a>
+            </li>
+            <li class="nav__item">
+              <a href="{{url_for('profile')}}" class="nav__link active"
+                >{{current_user.email}}</a
+              >
+            </li>
+            {% endif %}
+          </ul>
+
+          <button class="nav__toggle" aria-label="Toggle navigation menu">
+            <span class="nav__bar"></span>
+            <span class="nav__bar"></span>
+            <span class="nav__bar"></span>
+          </button>
+        </div>
+      </nav>
+      <div class="container">
+        <section class="hero" id="home">
+          <h1 class="hero__title">SayIt Playground API</h1>
+          <p class="hero__subtitle">
+            Powerful, fast, and reliable API for building amazing chat
+            applications with integrated gaming features
+          </p>
+          <a href="{{url_for('docs_page')}}" class="hero__btn">Get started</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <main class="main">
+        <h2 class="main__title">Welcome to SayIt Playground API</h2>
+        <p class="main__description">
+          Transform your chat application with interactive games and engaging
+          activities. Our API provides easy access to a growing collection of
+          games categorized by type, difficulty, and player count.
+        </p>
+
+        <section class="features">
+          <h3 class="features__title">Key Features</h3>
+          <ul class="features__list">
+            <li class="feature">
+              <p class="feature__description">
+                <span class="feature__highlight">🎯 Game Categories — </span>
+                Fetch games by category, difficulty, or player count.
+              </p>
+            </li>
+            <li class="feature">
+              <p class="feature__description">
+                <span class="feature__highlight"
+                  >🔐 User Authentication —
+                </span>
+                Secure login and registration system.
+              </p>
+            </li>
+            <li class="feature">
+              <p class="feature__description">
+                <span class="feature__highlight">💡 Community Driven — </span>
+                Users can suggest new games and activities.
+              </p>
+            </li>
+            <li class="feature">
+              <p class="feature__description">
+                <span class="feature__highlight">⚡ Fast & Reliable — </span>
+                Built for real-time chat applications.
+              </p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="suggestion-cta">
+          <h2 class="suggestion-cta__title">
+            Have something amazing you'd like us to add?
+          </h2>
+          <p class="suggestion-cta__subtitle">
+            Join thousands of developers already using SayIt API to power their
+            applications
+          </p>
+          <a href="{{url_for('suggest')}}" class="suggestion-cta__btn"
+            >Suggest</a
+          >
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const toggleBtn = document.querySelector(".nav__toggle");
+      const navList = document.querySelector(".nav__list");
+      const navLinks = document.querySelectorAll(".nav__link");
+
+      toggleBtn.addEventListener("click", () => {
+        navList.classList.toggle("nav--open");
+        toggleBtn.classList.toggle("nav__toggle--open");
+      });
+
+      navLinks.forEach((navLink) => {
+        navLink.addEventListener("click", () => {
+          navList.classList.remove("nav--open");
+          toggleBtn.classList.remove("nav__toggle--open");
+        });
+      });
+    </script>
+  </body>
+</html>

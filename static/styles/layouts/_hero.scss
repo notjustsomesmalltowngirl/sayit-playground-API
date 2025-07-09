@@ -1,0 +1,87 @@
+@use "../abstract/mixins";
+
+.hero {
+  margin-block-start: 10rem;
+  margin-block-end: 2rem;
+  text-align: center;
+  background-color: rgba(125, 28, 74, 0.1);
+  padding: 4rem 2rem;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(244, 204, 233, 0.15);
+
+  &__title {
+    font-size: 3rem;
+    margin-block-end: 2rem;
+    color: var(--quaternary-light);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
+    @media (max-width: 800px) {
+      font-size: 2.3rem;
+    }
+    @media (max-width: 500px) {
+      font-size: 2rem;
+    }
+  }
+  &__subtitle {
+    font-size: 1.4rem;
+    max-width: 600px;
+    margin-inline: auto;
+    margin-block-end: 3rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+
+    @media (max-width: 800px) {
+      font-size: 1.1rem;
+    }
+    @media (max-width: 500px) {
+      font-size: 1rem;
+    }
+  }
+  @media (max-width: 800px) {
+    margin-block-start: 6rem;
+  }
+}
+
+/* Documentation 'hero' styles */
+.documentation-header__content {
+  padding: var(--space-lg) var(--space-sm);
+
+  @media (max-width: 750px) {
+    padding: var(--space-md) var(--space-xs);
+  }
+}
+
+.documentation__title {
+  font-size: 2.9rem;
+  // margin-block: var(--space-lg) var(--space-sm);
+  margin-block-end: var(--space-sm);
+  line-height: 1.2;
+  text-align: left;
+  background: linear-gradient(
+    45deg,
+    var(--quaternary-light),
+    var(--tertiary-rose)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+
+  @media (max-width: 750px) {
+    font-size: 2.2rem;
+  }
+}
+.documentation__subtitle {
+  font-size: 1.2rem;
+  text-align: left;
+  // margin-block-end: var(--space-md);
+  color: var(--text-secondary);
+  color: #c7a5b0;
+  @media (max-width: 750px) {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../static/styles/main.css" />
+     <link
+      rel="icon"
+      type="image/png"
+      href="../static/logo-mono.png"
+    />
+    <title>sayIt API | Profile</title>
+  </head>
+  <body>
+    <div class="form-container">
+      <main class="profile auth">
+        <form class="profile__form auth__form" action="{{url_for('update_profile')}}" method="post">
+          <h2 class="profile__title auth__title">Profile</h2>
+          <div class="profile__form-group form-group">
+            <label for="email" class="profile__form-label form-group__label"
+              >Email</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="new_email"
+              class="profile__form-input form-group__input"
+              placeholder="Enter your email"
+              value="{{current_user.email}}"
+            />
+            <button type="submit" class="profile__form-button auth__submit-btn" name="update_email">
+              Update Email Address
+            </button>
+          </div>
+          <div class="profile__form-group form-group">
+            <label for="Password" class="profile__form-label form-group__label"
+              >Password</label
+            >
+            <input
+              type="password"
+              name="new_password"
+              id="password"
+              class="profile__form-input form-group__input visually-hidden"
+              placeholder="Input new password.."
+            />
+            <button
+              type="submit"
+              name="update_password"
+              id="changePasswordBtn"
+              class="profile__form-button auth__submit-btn"
+            >
+              Change Password
+            </button>
+            {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                {% for message in messages %}
+                  <div style="color: #ffb800; font-size: 0.8rem">{{ message }}</div>
+                {% endfor %}
+              {% endif %}
+            {% endwith %}
+          </div>
+          <div class="profile__form-group input-section field-label">
+            <label for="apiKey" class="profile__form-label form-group__label"
+              >API Key</label
+            >
+            <input
+              type="text"
+              id="apiKey"
+              class="profile__form-input form-group__input"
+              value="{{current_user.api_key}}"
+              readonly
+            />
+          </div>
+        </form>
+      </main>
+    </div>
+    <script>
+      const changePasswordBtn = document.getElementById("changePasswordBtn");
+      const passwordInput = document.getElementById("password");
+      const form = document.querySelector(".profile__form");
+
+      let passwordRevealed = false;
+
+      // Track which button was clicked
+      let clickedButton = null;
+
+      form.addEventListener("submit", function (event) {
+        if (clickedButton === changePasswordBtn && !passwordRevealed) {
+          event.preventDefault(); // 🛑 prevent full form submission
+
+          passwordInput.classList.remove("visually-hidden");
+          passwordInput.focus();
+          changePasswordBtn.textContent = "Submit New Password";
+          passwordRevealed = true;
+        }
+        // else: allow form to submit normally (email or second password click)
+      });
+
+      // Listen to which button was clicked
+      form.addEventListener("click", function (e) {
+        if (e.target.tagName === "BUTTON") {
+          clickedButton = e.target;
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,100 @@
+@use "../abstract/mixins";
+.header__nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+
+  background: var(--primary-dark);
+}
+.nav__content {
+  padding: 0.5rem 2rem;
+  min-height: 80px;
+  @include mixins.flexLayout;
+}
+.nav__list {
+  @include mixins.flexLayout(center);
+  gap: 1.4rem;
+  // transition: transform 0.3s ease;
+
+  @media (max-width: 900px) {
+    z-index: 100;
+    position: fixed;
+    top: 80px;
+    background: var(--primary-dark);
+
+    flex-direction: column;
+    width: 100%;
+    right: 0;
+    padding: 10px 0 25px;
+    transform: translateY(-200%);
+  }
+}
+.nav__logo-link {
+  display: inline-block;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--quaternary-light);
+  transition: all 0.3s ease;
+  &:hover {
+    transform: scale(1.03);
+    color: var(--tertiary-rose);
+  }
+}
+.nav__link {
+  color: var(--text-primary);
+  padding: 0.6rem 1rem;
+  font-size: 0.81rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-radius: 23px;
+    background: rgba(244, 204, 233, 0.1);
+    border-color: var(--quaternary-light);
+    color: var(--quaternary-light);
+  }
+}
+.active {
+  border-radius: 23px;
+  background: rgba(244, 204, 233, 0.1);
+  border-color: var(--quaternary-light);
+  color: var(--quaternary-light);
+
+  &:hover {
+    background: rgba(244, 204, 233, 0.2);
+    color: var(--quaternary-light);
+    border-color: var(--quaternary-light);
+  }
+}
+
+.nav__toggle {
+  display: none;
+  background-color: transparent;
+  border: none;
+  transition: all 0.3s ease;
+  @media (max-width: 900px) {
+    display: block;
+  }
+}
+.nav__bar {
+  display: block;
+  background-color: var(--text-primary);
+  height: 3px;
+  width: 23px;
+  border-radius: 4px;
+  margin-block-end: 3px;
+}
+.nav--open {
+  transform: translateY(0);
+}
+.nav__toggle--open .nav__bar:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.nav__toggle--open .nav__bar:nth-child(2) {
+  opacity: 0;
+}
+.nav__toggle--open .nav__bar:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
