@@ -1,0 +1,248 @@
+{
+  "riddles": {
+    "easy": [
+      {
+      "riddle": "What has legs but doesn’t walk?",
+      "answer": "A table"
+    },
+    {
+      "riddle": "What has ears but cannot hear?",
+      "answer": "A cornfield"
+    },
+    {
+      "riddle": "What can you hold without ever touching?",
+      "answer": "A conversation"
+    },
+    {
+      "riddle": "What comes down but never goes up?",
+      "answer": "Rain"
+    },
+    {
+      "riddle": "What has four wheels and flies?",
+      "answer": "A garbage truck"
+    },
+      {
+        "riddle": "What has keys but no locks",
+        "answer": "A piano"
+      },
+      {
+        "riddle": "What gets wet while drying?",
+        "answer": "A towel"
+      },
+      {
+        "riddle": "What has hands but cannot clap?",
+        "answer": "A clock"
+      },
+      {
+        "riddle": "What can travel around the world while staying in a corner?",
+        "answer": "A stamp"
+      },
+      {
+        "riddle": "What has a head and a tail but no body?",
+        "answer": "A coin"
+      },
+      {
+        "riddle": "What goes up but never comes down?",
+        "answer": "Your age"
+      },
+      {
+        "riddle": "What has teeth but cannot bite?",
+        "answer": "A zipper"
+      },
+      {
+        "riddle": "What has a neck but no head?",
+        "answer": "A bottle"
+      },
+      {
+        "riddle": "What can you catch but not throw?",
+        "answer": "A cold"
+      },
+      {
+        "riddle": "What has one eye but cannot see?",
+        "answer": "A needle"
+      }
+    ],
+    "medium": [
+        {
+      "riddle": "I have a heart that doesn’t beat. What am I?",
+      "answer": "An artichoke"
+    },
+    {
+      "riddle": "You see me once in June, twice in November, but not at all in May. What am I?",
+      "answer": "The letter E"
+    },
+    {
+      "riddle": "What is full of holes but still holds water?",
+      "answer": "A sponge"
+    },
+    {
+      "riddle": "What comes at the end of everything?",
+      "answer": "The letter G"
+    },
+    {
+      "riddle": "The more you remove from me, the bigger I get. What am I?",
+      "answer": "A hole"
+    },
+      {
+        "riddle": "I am not alive, but I grow; I don't have lungs, but I need air; I don't have a mouth, but water kills me. What am I?",
+        "answer": "Fire"
+      },
+      {
+        "riddle": "The more you take, the more you leave behind. What am I?",
+        "answer": "Footsteps"
+      },
+      {
+        "riddle": "I have cities, but no houses. I have mountains, but no trees. I have water, but no fish. What am I?",
+        "answer": "A map"
+      },
+      {
+        "riddle": "What comes once in a minute, twice in a moment, but never in a thousand years?",
+        "answer": "The letter M"
+      },
+      {
+        "riddle": "I am always hungry and will die if not fed, but whatever I touch will soon turn red. What am I?",
+        "answer": "Fire"
+      },
+      {
+        "riddle": "What can fill a room but takes up no space?",
+        "answer": "Light"
+      },
+      {
+        "riddle": "The poor have it, the rich need it, and if you eat it you'll die. What is it?",
+        "answer": "Nothing"
+      },
+      {
+        "riddle": "What breaks but never falls, and what falls but never breaks?",
+        "answer": "Day breaks and night falls"
+      },
+      {
+        "riddle": "I speak without a mouth and hear without ears. I have no body, but come alive with wind. What am I?",
+        "answer": "An echo"
+      },
+      {
+        "riddle": "What gets sharper the more you use it?",
+        "answer": "Your brain"
+      }
+    ],
+    "hard": [
+          {
+      "riddle": "Forward I’m heavy, but backward I’m not. What am I?",
+      "answer": "The word 'ton'"
+    },
+    {
+      "riddle": "I shrink smaller every time I take a bath. What am I?",
+      "answer": "Soap"
+    },
+    {
+      "riddle": "You can’t see me, but I make everything visible. What am I?",
+      "answer": "Light"
+    },
+    {
+      "riddle": "I’m tall when I’m young and short when I’m old. What am I?",
+      "answer": "A candle"
+    },
+    {
+      "riddle": "What flies forever, rests never?",
+      "answer": "Time"
+    },
+      {
+        "riddle": "I have billions of eyes, yet I live in darkness. I have millions of ears, yet only four lobes. I have no muscle, yet I rule two hemispheres. What am I?",
+        "answer": "A brain"
+      },
+      {
+        "riddle": "What is so delicate that saying its name breaks it?",
+        "answer": "Silence"
+      },
+      {
+        "riddle": "I am the beginning of everything, the end of everywhere. I'm the beginning of eternity, the end of time and space. What am I?",
+        "answer": "The letter E"
+      },
+      {
+        "riddle": "A man lives on the 20th floor of an apartment building. Every morning he takes the elevator down to the ground floor. When he comes home, he takes the elevator to the 10th floor and walks the rest of the way... except on rainy days, when he takes the elevator all the way to the 20th floor. Why?",
+        "answer": "He's too short to reach the button for the 20th floor, except when he has an umbrella"
+      },
+      {
+        "riddle": "What is always in front of you but can't be seen?",
+        "answer": "The future"
+      },
+      {
+        "riddle": "I am taken from a mine, and shut up in a wooden case, from which I am never released, and yet I am used by almost every person. What am I?",
+        "answer": "Pencil lead"
+      },
+      {
+        "riddle": "What disappears as soon as you say its name?",
+        "answer": "Silence"
+      },
+      {
+        "riddle": "A woman shoots her husband, then holds him under water for five minutes. Next, she hangs him. Right after, they enjoy a lovely dinner. How?",
+        "answer": "She's a photographer developing photos"
+      },
+      {
+        "riddle": "I am not alive, yet I can die. I am not solid, yet I can be broken. I am not visible, yet I can be seen. What am I?",
+        "answer": "A promise"
+      },
+      {
+        "riddle": "What has many needles but doesn't sew?",
+        "answer": "A pine tree"
+      }
+    ],
+    "wordplay": [
+      {
+      "riddle": "What five-letter word becomes shorter when you add two letters?",
+      "answer": "Short"
+    },
+    {
+      "riddle": "What word starts with ‘e’, ends with ‘e’, but only contains one letter?",
+      "answer": "Envelope"
+    },
+    {
+      "riddle": "What begins with T, ends with T, and has T in it?",
+      "answer": "Teapot"
+    },
+    {
+      "riddle": "What word looks the same upside down and backward?",
+      "answer": "SWIMS"
+    },
+    {
+      "riddle": "What word has the most letters in it?",
+      "answer": "Alphabet"
+    },
+      {
+        "riddle": "What 8-letter word can have a letter taken away and it still makes a word. Take another letter away and it still makes a word. Keep on doing that until you have one letter left. What is the word?",
+        "answer": "Starting"
+      },
+      {
+        "riddle": "I am a word of letters three; add two and fewer there will be. What word am I?",
+        "answer": "Few"
+      },
+      {
+        "riddle": "What word is spelled the same forwards and backwards?",
+        "answer": "Racecar"
+      },
+      {
+        "riddle": "What word contains all 26 letters but only has three syllables?",
+        "answer": "Alphabet"
+      },
+      {
+        "riddle": "I am a five-letter word. Take away the first letter and I am a crime's name. Take away the first two letters and I am an animal. Take away the first and last letter and I am a form of music. What am I?",
+        "answer": "Grape"
+      },
+      {
+        "riddle": "What word can be written forward, backward or upside down, and can still be read from left to right?",
+        "answer": "NOON"
+      },
+      {
+        "riddle": "What common English word has the three consecutive double letters?",
+        "answer": "Bookkeeper"
+      },
+      {
+        "riddle": "I'm a word that's hardly there. Take away my start, and I'm an herbal flair. What am I?",
+        "answer": "Sparsley"
+      },
+      {
+        "riddle": "What word has kst in the middle, in the beginning, and at the end?",
+        "answer": "Inkstand"
+      }
+    ]
+  }
+}

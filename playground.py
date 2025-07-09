@@ -4,9 +4,9 @@ from flask import Flask, render_template, jsonify, request, redirect, url_for, f
 from flask_login import login_user, LoginManager, login_required, current_user, logout_user
 from werkzeug.security import generate_password_hash, check_password_hash
 from dotenv import load_dotenv
-from sayit_playground_api.models import db, Playground, DidYouKnow, Hypotheticals, HotTakes, NeverHaveIEver
-from sayit_playground_api.models import WouldYouRather, StoryBuilder, Riddle, TwoTruthsAndALie
-from sayit_playground_api.models import User
+from models import db, Playground, DidYouKnow, Hypotheticals, HotTakes, NeverHaveIEver
+from models import WouldYouRather, StoryBuilder, Riddle, TwoTruthsAndALie
+from models import User
 import smtplib
 import logging
 from email.message import EmailMessage

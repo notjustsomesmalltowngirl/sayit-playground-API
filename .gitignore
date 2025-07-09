@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.env
+.venv
+.idea/
+.DS_Store
+flask_session/
+sayIt_usernames.txt
+instance/
+*.db
+*.sqlite3
+.vscode/
+instance
+gamesinstance/
