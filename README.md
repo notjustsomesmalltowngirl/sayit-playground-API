@@ -1,4 +1,4 @@
-# chat playGround API
+# chat Playground API
 A fun and simple API that returns interactive game prompts like **"Would You Rather"** , **"Never Have I Ever"**, **Riddles**, **Hypotheticals**, and more — perfect for chat apps, games, or boredom busters!
 
 ## ✨ Features
