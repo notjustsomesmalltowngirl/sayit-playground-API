@@ -210,7 +210,7 @@
                   <td class="parameter-table__cell">string</td>
                   <td class="parameter-table__cell hidden-mobile">
                 Specifies the type of game to fetch (e.g., Would You Rather, Trivia, Did You Know).</td>
-                  <td class="parameter-table__cell"> Yes — for all endpoints except <pre><code>/api/v1/all-game-types</code></pre></td>
+                  <td class="parameter-table__cell"> No — only for <pre><code>/api/v1/get-by-type</code></pre></td>
                 </tr>
                 <tr class="parameter-table__row">
                   <td class="parameter-table__cell">category</td>
@@ -363,7 +363,7 @@
 import requests
 
 response = requests.get(
-    "{{url}}get-by-type?api_key={{api_key}}&game_type=hot%20takes&limit=3"
+    "{{url}}get-by-type?api_key={{api_key}}&game_type=hot takes&limit=3"
 )
 print(response.json())
   </code></pre>
@@ -388,6 +388,28 @@ print(response.json())
   </code></pre>
 </div>
 
+          <h5 class="authentication__subtitle--way subtitle">
+  Fetching a game randomly
+</h5>
+<div class="code-block" data-lang="python">
+  <pre><code>
+import requests
+
+response = requests.get(
+    "{{url}}get-random?api_key={{api_key}}"
+)
+print(response.json())
+  </code></pre>
+
+  <pre><code>
+{
+  "hypotheticals": {
+      "category": "challenging",
+      "scenario": "What would you do if you had to lose one of your five senses, which would you choose?"
+    }
+}
+  </code></pre>
+</div>
          <h5 class="authentication__subtitle--way subtitle">
   Getting all available game types
 </h5>

@@ -1,4 +1,5 @@
 import os
+import random
 from datetime import datetime
 from flask import render_template, jsonify, request, redirect, url_for, flash
 from flask_login import login_user, LoginManager, login_required, current_user, logout_user
@@ -76,8 +77,11 @@ def get_all_game_types():
 @app.route('/api/v1/get-random', methods=['GET'])
 @require_api_key
 def get_random_game():
-    game_type = request.args.get('game_type')
-    error_response = return_error_for_wrong_params(game_type, limit=1)
+    valid_types = ['did you know', 'hypotheticals', 'hot takes', 'never have i ever',
+                   'would you rather',
+                   'story builder', 'riddles', 'two truths and a lie']
+    game_type = random.choice(valid_types)
+    error_response = return_error_for_wrong_params(game_type)
     if error_response:
         error, status_code = error_response
         return jsonify(error), status_code

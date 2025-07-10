@@ -40,7 +40,7 @@ def get_game_to_type_mapping(game_type):
     return mapping[key]
 
 
-def return_error_for_wrong_params(game_type, limit):
+def return_error_for_wrong_params(game_type, limit=None):
     """    Returns an appropriate error response for invalid or missing game type.
 
     This function checks whether the provided game_type is missing or not among the
@@ -54,15 +54,16 @@ def return_error_for_wrong_params(game_type, limit):
     Returns:
         tuple[dict, int] | None: A tuple containing the error message dictionary and status code (400 or 422),
                                  or None if the game_type is valid."""
-    if not is_positive_int(limit):
-        return {
-            'status': 'error',
-            'code': 'invalid_param_type',
-            'message': {
-                'detail': "The 'limit' parameter must be a positive integer or a string that can be converted to a "
-                          "positive integer."
-            }
-        }, 422
+    if limit:
+        if not is_positive_int(limit):
+            return {
+                'status': 'error',
+                'code': 'invalid_param_type',
+                'message': {
+                    'detail': "The 'limit' parameter must be a positive integer or a string that can be converted to a "
+                              "positive integer."
+                }
+            }, 422
 
     if not game_type:
         return {'status': 'error', 'code': 'missing_params',
@@ -76,7 +77,7 @@ def return_error_for_wrong_params(game_type, limit):
         return {'status': 'error', 'code': 'invalid_param_value',
                 'message': {
                     'Unprocessable Entity': f"{game_type} is not a valid game type . Valid options are: "
-                                            f"{', '.join([t.title() for t in valid_types])}"
+                                            f"{', '.join([t for t in valid_types])}"
 
                 }
                 }, 422
