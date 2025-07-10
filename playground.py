@@ -48,8 +48,8 @@ def inject_globals():
     return dict(current_year=datetime.now().year)
 
 
-# with app.app_context():
-#     db.create_all()
+with app.app_context():
+    db.create_all()
 #     game = Playground.query.filter_by(type='did you know').scalar()
 #     query = getattr(game, game_type)
 #     print(query.order_by(func.random()).limit(1).one().to_dict())
