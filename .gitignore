@@ -13,3 +13,4 @@ instance/
 .vscode/
 instance
 games
+utils/__pycache__
