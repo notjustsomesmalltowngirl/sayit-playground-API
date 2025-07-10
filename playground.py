@@ -16,6 +16,7 @@ from utils.helpers import (get_game_by_type, return_error_for_wrong_params,
 from sqlalchemy.exc import IntegrityError
 import seed_games
 from extensions import app
+
 load_dotenv()
 
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('SQLALCHEMY_DATABASE_URI')
@@ -49,6 +50,8 @@ def inject_globals():
 
 with app.app_context():
     db.create_all()
+
+
 #     game = Playground.query.filter_by(type='did you know').scalar()
 #     query = getattr(game, game_type)
 #     print(query.order_by(func.random()).limit(1).one().to_dict())
@@ -230,7 +233,6 @@ def register():
     return render_template('register.html')
 
 
-
 @app.route('/sign-in', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -316,6 +318,8 @@ def seed_db():
             return jsonify({"message": "✅ Database seeded successfully"}), 200
         except Exception as e:
             return jsonify({"error": str(e)}), 500
+    elif not seed_key:
+        return jsonify({"error": "Unauthorized"}), 403
     else:
         return jsonify({"error": "Unauthorized"}), 403
 
