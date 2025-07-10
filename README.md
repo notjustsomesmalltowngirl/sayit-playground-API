@@ -61,6 +61,6 @@ This API is live at:
 https://sayit-playground-api.onrender.com
 
 ## Made With ❤️
-Built by [**Happiness**]([https://your-link.com](https://github.com/uptowngirl757)) and [**Peace Dara**]([https://sisters-link.com](https://github.com/notjustsomesmalltowngirl)) — two curious minds who love mixing code with creativity.
 
+Built by [**Happiness**](https://github.com/uptowngirl757) and [**Peace Dara**](https://github.com/notjustsomesmalltowngirl) — two curious minds who love mixing code with creativity.
 
