@@ -289,7 +289,8 @@ def docs_page():
     return render_template('documentation.html', api_key=api_key,
                            valid_types=['did you know, ', 'hypotheticals, ', 'hot takes, ', 'never have i ever, ',
                                         'would you rather, ',
-                                        'story builder, ', 'riddles, ', 'two truths and a lie'])
+                                        'story builder, ', 'riddles, ', 'two truths and a lie'],
+                           url='https://sayit-playground-api.onrender.com/api/v1/')
 
 
 @app.route('/logout', methods=['GET', 'POST'])

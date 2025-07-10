@@ -89,7 +89,7 @@
             All API requests should be made to the following base URL:
           </p>
           <div class="code-block" data-lang="url">
-            <pre><code>http://127.0.0.1:5000/api/v1/</code></pre>
+            <pre><code> {{url}}</code></pre>
           </div>
           <div class="highlight-box">
             <p>
@@ -112,7 +112,7 @@
             Via Querystring
           </h5>
           <div class="code-block" data-lang="URL">
-            <pre><code><span class="highlight-word">GET</span> https://127.0.0.1:5000/api/v1/all-game-types?api_key=<span class="highlight-word">{{api_key}}</span></code></pre>
+            <pre><code><span class="highlight-word">GET</span> {{url}}all-game-types?api_key=<span class="highlight-word">{{api_key}}</span></code></pre>
           </div>
           <h5 class="authentication__subtitle--way subtitle">
             Via X-Api-Key HTTP header
@@ -363,7 +363,7 @@
 import requests
 
 response = requests.get(
-    "http://127.0.0.1:5000/api/v1/get-by-type?api_key={{api_key}}&game_type=hot%20takes&limit=3"
+    "{{url}}get-by-type?api_key={{api_key}}&game_type=hot%20takes&limit=3"
 )
 print(response.json())
   </code></pre>
@@ -397,7 +397,7 @@ print(response.json())
 import requests
 
 response = requests.get(
-    "http://127.0.0.1:5000/api/v1/all-game-types?api_key={{api_key}}"
+    " {{url}}all-game-types?api_key={{api_key}}"
 )
 
 print(response.json())
