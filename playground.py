@@ -304,24 +304,23 @@ def logout():
 @login_required
 def seed_db():
     seed_key = request.args.get('seed_key')
+    secret_key = os.getenv('SEED_KEY')
 
-    if seed_key == os.getenv('SEED_KEY'):
-        try:
-            seed_games.seed_riddles()
-            seed_games.seed_hypotheticals()
-            seed_games.seed_nhie()
-            seed_games.seed_story_builder()
-            seed_games.seed_would_you_rather()
-            seed_games.seed_did_you_know()
-            seed_games.seed_two_truths_and_a_lie()
-            seed_games.seed_hot_takes()
-            return jsonify({"message": "✅ Database seeded successfully"}), 200
-        except Exception as e:
-            return jsonify({"error": str(e)}), 500
-    elif not seed_key:
+    if not seed_key or seed_key != secret_key:
         return jsonify({"error": "Unauthorized"}), 403
-    else:
-        return jsonify({"error": "Unauthorized"}), 403
+
+    try:
+        seed_games.seed_riddles()
+        seed_games.seed_hypotheticals()
+        seed_games.seed_nhie()
+        seed_games.seed_story_builder()
+        seed_games.seed_would_you_rather()
+        seed_games.seed_did_you_know()
+        seed_games.seed_two_truths_and_a_lie()
+        seed_games.seed_hot_takes()
+        return jsonify({"message": "✅ Database seeded successfully"}), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 
 if __name__ == "__main__":

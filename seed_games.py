@@ -251,7 +251,7 @@ def seed_two_truths_and_a_lie():
         # Get or create Playground entry
         playground = Playground.query.filter_by(type="two truths and a lie").first()
         if not playground:
-            playground = Playground(type="two_truths and a lie")
+            playground = Playground(type="two truths and a lie")
             db.session.add(playground)
             db.session.commit()
             print("✅ Created Playground entry for 'two truths and a lie'")
