@@ -14,7 +14,7 @@ from sqlalchemy.sql.expression import func
 from utils.helpers import (get_game_by_type, return_error_for_wrong_params,
                            get_game_to_type_mapping, get_api_key, require_api_key, send_api_key)
 from sqlalchemy.exc import IntegrityError
-
+import seed_games
 app = Flask(__name__)
 
 load_dotenv()
@@ -298,6 +298,27 @@ def docs_page():
 def logout():
     logout_user()
     return redirect(url_for('home'))
+
+@app.route('/seed')
+@login_required
+def seed_db():
+    seed_key = request.args.get('seed_key')
+
+    if seed_key == os.getenv('SEED_KEY'):
+        try:
+            seed_games.seed_riddles()
+            seed_games.seed_hypotheticals()
+            seed_games.seed_nhie()
+            seed_games.seed_story_builder()
+            seed_games.seed_would_you_rather()
+            seed_games.seed_did_you_know()
+            seed_games.seed_two_truths_and_a_lie()
+            seed_games.seed_hot_takes()
+            return jsonify({"message": "✅ Database seeded successfully"}), 200
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+    else:
+        return jsonify({"error": "Unauthorized"}), 403
 
 
 if __name__ == "__main__":
