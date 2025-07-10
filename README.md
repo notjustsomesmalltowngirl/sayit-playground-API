@@ -46,15 +46,15 @@ A fun and simple API that returns interactive game prompts like **"Would You Rat
 
 - hot-takes
 
-- never-have-i-ever
+- never have i ever
 
-- would-you-rather
+- would you rather
 
-- story-builder
+- story builder
 
 - riddles
 
-- two-truths-and-a-lie
+- two truths and a lie
 
 ## Deployment
 This API is live at:
