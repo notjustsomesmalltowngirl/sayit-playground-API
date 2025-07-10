@@ -1,6 +1,6 @@
 import json
 from models import db
-from playground import app
+from extensions import app
 from models import (DidYouKnow, Playground, NeverHaveIEver, HotTakes,
                     Hypotheticals, Riddle, StoryBuilder, WouldYouRather, TwoTruthsAndALie)
 

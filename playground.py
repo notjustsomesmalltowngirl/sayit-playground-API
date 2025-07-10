@@ -1,6 +1,6 @@
 import os
 from datetime import datetime
-from flask import Flask, render_template, jsonify, request, redirect, url_for, flash
+from flask import render_template, jsonify, request, redirect, url_for, flash
 from flask_login import login_user, LoginManager, login_required, current_user, logout_user
 from flask_mail import Message
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -15,8 +15,7 @@ from utils.helpers import (get_game_by_type, return_error_for_wrong_params,
                            get_game_to_type_mapping, get_api_key, require_api_key, send_api_key)
 from sqlalchemy.exc import IntegrityError
 import seed_games
-app = Flask(__name__)
-
+from extensions import app
 load_dotenv()
 
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('SQLALCHEMY_DATABASE_URI')
