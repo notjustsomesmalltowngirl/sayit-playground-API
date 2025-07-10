@@ -1,0 +1,374 @@
+{
+  "two truths and a lie": {
+     "animals": [
+      {
+        "statements": [
+          {"statement": "Dolphins sleep with one eye open.", "truth": true},
+          {"statement": "A group of crows is called a murder.", "truth": true},
+          {"statement": "Penguins can fly for short distances.", "truth": false}
+        ]
+      },
+      {
+        "statements": [
+          {"statement": "Octopuses have three hearts.", "truth": true},
+          {"statement": "Koalas have fingerprints that are almost identical to humans'.", "truth": true},
+          {"statement": "Bats are blind.", "truth": false}
+        ]
+      },
+      {
+        "statements": [
+          {"statement": "Sloths can hold their breath longer than dolphins.", "truth": true},
+          {"statement": "Parrots can mimic human speech.", "truth": true},
+          {"statement": "Cows eat meat when food is scarce.", "truth": false}
+        ]
+      },
+      {
+        "statements": [
+          {"statement": "Elephants are afraid of mice.", "truth": false},
+          {"statement": "Flamingos are pink because of what they eat.", "truth": true},
+          {"statement": "Owls can turn their heads 270 degrees.", "truth": true}
+        ]
+      },
+      {
+        "statements": [
+          {"statement": "Sharks existed before trees.", "truth": true},
+          {"statement": "Cats have nine lives.", "truth": false},
+          {"statement": "A shrimp's heart is in its head.", "truth": true}
+        ]
+      },
+      {
+        "statements": [
+          {"statement": "Bears hibernate for the entire winter.", "truth": false},
+          {"statement": "Honeybees can recognize human faces.", "truth": true},
+          {"statement": "Chameleons change color based on their mood.", "truth": true}
+        ]
+      }
+    ],
+    "science": [
+      {
+        "statements": [
+          {"statement": "Water expands when it freezes.", "truth": true},
+          {"statement": "The human body contains trace amounts of gold.", "truth": true},
+          {"statement": "Sound travels faster than light.", "truth": false}
+        ]
+      },
+      {
+        "statements": [
+          {"statement": "Saturn could float in water because it's mostly gas.", "truth": true},
+          {"statement": "Your fingernails grow faster than your toenails.", "truth": true},
+          {"statement": "Humans can survive without oxygen for 10 minutes.", "truth": false}
+        ]
+      },
+      {
+        "statements": [
+          {"statement": "Hot water can freeze faster than cold water under certain conditions.", "truth": true},
+          {"statement": "Blood is red due to iron content.", "truth": true},
+          {"statement": "Plants produce oxygen only at night.", "truth": false}
+        ]
+      },
+      {
+        "statements": [
+          {"statement": "Glass is technically a liquid.", "truth": false},
+          {"statement": "Lightning is hotter than the surface of the sun.", "truth": true},
+          {"statement": "Diamonds are made of compressed carbon.", "truth": true}
+        ]
+      },
+      {
+        "statements": [
+          {"statement": "A rubber ball bounces higher in hot weather.", "truth": true},
+          {"statement": "Gold is heavier than lead.", "truth": true},
+          {"statement": "Magnets work by attracting iron in your blood.", "truth": false}
+        ]
+      },
+      {
+        "statements": [
+          {"statement": "Absolute zero is the lowest possible temperature, but it has never been recorded.", "truth": true},
+          {"statement": "Oxygen itself is not flammable, but it helps other materials burn.", "truth": true},
+          {"statement": "The speed of light is constant in all mediums.", "truth": false}
+        ]
+      }
+    ],
+    "space": [
+      {
+        "statements": [
+          {"statement": "The moon has moonquakes.", "truth": true},
+          {"statement": "Venus spins in the opposite direction of most planets.", "truth": true},
+          {"statement": "Mars is the hottest planet in the solar system.", "truth": false}
+        ]
+      },
+      {
+        "statements": [
+          {"statement": "The sun is technically white, not yellow.", "truth": true},
+          {"statement": "There are more stars in the universe than grains of sand on Earth.", "truth": true},
+          {"statement": "The moon is larger than Earth.", "truth": false}
+        ]
+      },
+      {
+        "statements": [
+          {"statement": "Jupiter has a storm that's lasted over 300 years.", "truth": true},
+          {"statement": "Some planets have rings made of ice and rock.", "truth": true},
+          {"statement": "There are no seasons on Mars.", "truth": false}
+        ]
+      },
+      {
+        "statements": [
+          {"statement": "Mercury is the closest planet to the sun but not the hottest.", "truth": true},
+          {"statement": "The sun will eventually become a black hole.", "truth": false},
+          {"statement": "Uranus rotates on its side.", "truth": true}
+        ]
+      },
+      {
+        "statements": [
+          {"statement": "Saturn's rings are made entirely of ice.", "truth": false},
+          {"statement": "The moon is moving away from Earth every year.", "truth": true},
+          {"statement": "Pluto takes longer to orbit the sun than Neptune.", "truth": true}
+        ]
+      },
+      {
+        "statements": [
+          {"statement": "Black holes can evaporate over time.", "truth": true},
+          {"statement": "The International Space Station orbits Earth every 90 minutes.", "truth": true},
+          {"statement": "Astronauts age faster in space due to zero gravity.", "truth": false}
+        ]
+      }
+    ],
+    "human_body": [
+      {
+        "statements": [
+          {"statement": "Your heart beats over 100,000 times a day.", "truth": true},
+          {"statement": "Humans have more than five senses.", "truth": true},
+          {"statement": "Hair and nails continue growing after death.", "truth": false}
+        ]
+      },
+      {
+        "statements": [
+          {"statement": "Babies have more bones than adults.", "truth": true},
+          {"statement": "The human nose can detect over 1 trillion smells.", "truth": true},
+          {"statement": "You can sneeze with your eyes open.", "truth": false}
+        ]
+      },
+      {
+        "statements": [
+          {"statement": "The liver can regenerate itself.", "truth": true},
+          {"statement": "Humans blink about 20 times per minute.", "truth": true},
+          {"statement": "You only use 10% of your brain.", "truth": false}
+        ]
+      },
+      {
+        "statements": [
+          {"statement": "Your stomach gets an entirely new lining every 3-5 days.", "truth": true},
+          {"statement": "Humans can live without a stomach.", "truth": true},
+          {"statement": "Your brain feels pain when you get a headache.", "truth": false}
+        ]
+      },
+      {
+        "statements": [
+          {"statement": "You lose consciousness if you lose 40% of your blood.", "truth": false},
+          {"statement": "Your left lung is smaller than your right lung.", "truth": true},
+          {"statement": "The human body produces about 1.5 liters of saliva daily.", "truth": true}
+        ]
+      },
+      {
+        "statements": [
+          {"statement": "Your ears and nose never stop growing.", "truth": true},
+          {"statement": "You have the same number of neck bones as a giraffe.", "truth": true},
+          {"statement": "Humans can see ultraviolet light.", "truth": false}
+        ]
+      }
+    ],
+    "random": [
+      {
+        "statements": [
+          {"statement": "The inventor of the frisbee was turned into a frisbee after he died.", "truth": true},
+          {"statement": "Bananas grow on plants, not trees.", "truth": true},
+          {"statement": "The Eiffel Tower was originally intended to be built in London.", "truth": false}
+        ]
+      },
+      {
+        "statements": [
+          {"statement": "There's a basketball court on the top floor of the U.S. Supreme Court.", "truth": true},
+          {"statement": "Sharks can live for over 400 years.", "truth": true},
+          {"statement": "The Great Wall of China is visible from the moon.", "truth": false}
+        ]
+      },
+      {
+        "statements": [
+          {"statement": "A day on Venus is longer than a year on Venus.", "truth": true},
+          {"statement": "Tomatoes are technically a fruit.", "truth": true},
+          {"statement": "Mount Everest is the closest point on Earth to space.", "truth": false}
+        ]
+      },
+      {
+        "statements": [
+          {"statement": "Bubble wrap was originally invented as wallpaper.", "truth": true},
+          {"statement": "The shortest war in history lasted 38 minutes.", "truth": true},
+          {"statement": "Coca-Cola was originally green.", "truth": false}
+        ]
+      },
+      {
+        "statements": [
+          {"statement": "Oxford University is older than the Aztec Empire.", "truth": true},
+          {"statement": "A group of flamingos is called a flamboyance.", "truth": true},
+          {"statement": "Fortune cookies were invented in China.", "truth": false}
+        ]
+      },
+      {
+        "statements": [
+          {"statement": "Cleopatra lived closer in time to the moon landing than to the construction of the Great Pyramid.", "truth": true},
+          {"statement": "Honey never spoils.", "truth": true},
+          {"statement": "The pig is Scotland's national animal.", "truth": false}
+        ]
+      }
+    ],
+    "music": [
+      {
+        "statements": [
+          {
+            "statement": "Beethoven continued to compose music even after he went deaf.",
+            "truth": true
+          },
+          {
+            "statement": "The guitar has six strings by standard.",
+            "truth": true
+          },
+          {
+            "statement": "The piano was invented in the 1900s.",
+            "truth": false
+          }
+        ]
+      },
+      {
+        "statements": [
+          {
+            "statement": "Mozart wrote his first composition at age five.",
+            "truth": true
+          },
+          {
+            "statement": "The Beatles were originally called The Quarrymen.",
+            "truth": true
+          },
+          {
+            "statement": "Rap music originated in the 2000s.",
+            "truth": false
+          }
+        ]
+      },
+      {
+        "statements": [
+          {
+            "statement": "A standard orchestra has string, woodwind, brass, and percussion sections.",
+            "truth": true
+          },
+          {
+            "statement": "Ed Sheeran writes songs for other artists too.",
+            "truth": true
+          },
+          {
+            "statement": "Vinyl records cannot be played in reverse.",
+            "truth": false
+          }
+        ]
+      }
+    ],
+    "history": [
+      {
+        "statements": [
+          {
+            "statement": "The Great Fire of London happened in 1666.",
+            "truth": true
+          },
+          {
+            "statement": "Nelson Mandela was South Africa's first Black president.",
+            "truth": true
+          },
+          {
+            "statement": "The Roman Empire fell before the invention of the wheel.",
+            "truth": false
+          }
+        ]
+      },
+      {
+        "statements": [
+          {
+            "statement": "The Berlin Wall fell in 1989.",
+            "truth": true
+          },
+          {
+            "statement": "Julius Caesar was assassinated in the Roman Senate.",
+            "truth": true
+          },
+          {
+            "statement": "The Titanic sank on its second voyage.",
+            "truth": false
+          }
+        ]
+      },
+      {
+        "statements": [
+          {
+            "statement": "World War I began in 1914.",
+            "truth": true
+          },
+          {
+            "statement": "The pyramids were built in Egypt thousands of years ago.",
+            "truth": true
+          },
+          {
+            "statement": "Christopher Columbus discovered America in the 1700s.",
+            "truth": false
+          }
+        ]
+      }
+    ],
+    "mythology": [
+      {
+        "statements": [
+          {
+            "statement": "Thor is the Norse god of thunder.",
+            "truth": true
+          },
+          {
+            "statement": "The phoenix is a mythical bird that rises from its ashes.",
+            "truth": true
+          },
+          {
+            "statement": "Hercules was a Roman god.",
+            "truth": false
+          }
+        ]
+      },
+      {
+        "statements": [
+          {
+            "statement": "Zeus was considered the king of the Greek gods.",
+            "truth": true
+          },
+          {
+            "statement": "Anubis was associated with the afterlife in Egyptian mythology.",
+            "truth": true
+          },
+          {
+            "statement": "Medusa was a kind-hearted goddess.",
+            "truth": false
+          }
+        ]
+      },
+      {
+        "statements": [
+          {
+            "statement": "Poseidon ruled the seas in Greek mythology.",
+            "truth": true
+          },
+          {
+            "statement": "Loki was known as a trickster god.",
+            "truth": true
+          },
+          {
+            "statement": "The Minotaur was a friendly giant.",
+            "truth": false
+          }
+        ]
+      }
+    ]
+  }
+}

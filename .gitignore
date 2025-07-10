@@ -12,5 +12,4 @@ instance/
 *.sqlite3
 .vscode/
 instance
-games
 utils/__pycache__

@@ -7,7 +7,6 @@ from flask_mail import Message
 from flask import current_app
 from extensions import mail
 
-
 def is_positive_int(s):
     try:
         return int(s) > 0
@@ -81,8 +80,6 @@ def return_error_for_wrong_params(game_type, limit):
 
                 }
                 }, 422
-    if ...:
-        ...
 
 
 def get_game_by_type(game, game_type, model_class, category=None, limit=None):
