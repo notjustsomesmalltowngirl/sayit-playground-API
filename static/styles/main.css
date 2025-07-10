@@ -691,13 +691,6 @@ select {
   font-weight: 600;
 }
 
-.footer {
-  background: var(--darker-bg);
-  padding: 2rem 0;
-  text-align: center;
-  border-top: 2px solid var(--primary-dark);
-}
-
 .error__text {
   color: var(--text-secondary);
 }
@@ -772,6 +765,38 @@ select {
   overflow-x: auto;
   width: 100%;
   -webkit-overflow-scrolling: touch;
+}
+
+.footer {
+  background: var(--darker-bg);
+  padding: 2rem 0;
+  text-align: center;
+  border-top: 2px solid var(--primary-dark);
+}
+.footer__text {
+  font-size: 0.8rem;
+}
+
+.admin-mail {
+  color: var(--tertiary-rose);
+  position: relative;
+  transition: color 250ms ease;
+}
+.admin-mail::before {
+  content: "";
+  position: absolute;
+  background-color: var(--tertiary-rose);
+  bottom: -20%;
+  height: 2px;
+  width: 0;
+  transition: width 250ms ease, background-color 250ms ease;
+}
+.admin-mail:hover {
+  color: var(--text-secondary);
+}
+.admin-mail:hover::before {
+  width: 100%;
+  background-color: var(--text-secondary);
 }
 
 .hero__btn {
