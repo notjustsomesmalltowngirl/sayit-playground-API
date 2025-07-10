@@ -40,11 +40,11 @@ A fun and simple API that returns interactive game prompts like **"Would You Rat
 
 ## Game Types You Can Query
 
-- did-you-know
+- did you know
 
 - hypotheticals
 
-- hot-takes
+- hot takes
 
 - never have i ever
 
