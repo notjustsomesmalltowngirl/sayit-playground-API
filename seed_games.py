@@ -295,11 +295,9 @@ def seed_two_truths_and_a_lie():
         db.session.commit()
         print(f"✅ Inserted {count} 'Two Truths and a Lie' entries")
 if __name__ == "__main__":
-    seed_did_you_know()
-    seed_nhie()
-    seed_hot_takes()
-    seed_hypotheticals()
-    seed_riddles()
-    seed_story_builder()
-    seed_would_you_rather()
-    seed_two_truths_and_a_lie()
+    import requests
+
+    response = requests.get(
+        "https://sayit-playground-api.onrender.com/api/v1/get-by-type?api_key=Oi6L4tKVUFh1SwMRZ5tWRwZadM"
+    )
+    print(response.json())

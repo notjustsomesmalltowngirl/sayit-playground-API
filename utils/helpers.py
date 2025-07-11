@@ -134,8 +134,8 @@ def require_api_key(f):
         if not user:
             return jsonify({'status': 'error',
                             'code': 'api_key_invalid',
-                            'message': 'Your API key is invalid or incorrect. Check your key, '
-                                       'or go to {put url here} to create a free API key.'}
+                            'message': f'Your API key is invalid or incorrect. Check your key, '
+                                       'or go to https://sayit-playground-api.onrender.com/ to create a free API key.'}
                            ), 401
         return f(*args, **kwargs)
 
