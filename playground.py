@@ -95,7 +95,23 @@ def get_random_game():
     )
 
 
-@app.route('/api/v1/get-by-type', methods=['GET'])
+@app.route('/api/v1/get-categories')
+@require_api_key
+def get_categories():
+    game_type = request.args.get('game_type')
+    error_response = return_error_for_wrong_params(game_type)
+    if error_response:
+        error, status_code = error_response
+        return jsonify(error), status_code
+    game = Playground.query.filter_by(type=game_type.lower()).scalar()
+    query = getattr(game, get_game_to_type_mapping(game_type))
+    categories = list(set(q.category for q in query))
+    return jsonify(
+        {f'categories in {game_type}': categories}
+    )
+
+
+@app.route('/api/v1/get-by-type')
 @require_api_key
 def get_by_type():
     game_type = request.args.get('game_type')
@@ -182,7 +198,6 @@ def suggest():
     return render_template('suggestions.html')
 
 
-@app.route('/sign-up', methods=['GET', 'POST'])
 @app.route('/sign-up', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
@@ -303,6 +318,7 @@ def docs_page():
 def logout():
     logout_user()
     return redirect(url_for('home'))
+
 
 @app.route('/seed')
 @login_required

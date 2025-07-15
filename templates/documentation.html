@@ -146,7 +146,7 @@
         <section class="endpoints documentation__section">
           <h2 class="endpoints__title title">🎮 Playground API Endpoints</h2>
           <p class="endpoints__description description">
-            Playground API has three endpoints:
+            Playground API has four endpoints:
           </p>
           <h5 class="authentication__subtitle--way subtitle">
             GET <code>/api/v1/all-game-types</code>
@@ -154,6 +154,12 @@
           <p class="endpoints__description description">
             Returns a list of all available game types (e.g., Would You Rather, Never Have I Ever,
             Trivia, Did You Know, etc.) currently supported by the API.
+          </p>
+          <h5 class="authentication__subtitle--way subtitle">
+            GET <code>/api/v1/get-categories?game_type=...</code>
+          </h5>
+          <p class="endpoints__description description">
+            Returns a list of all available categories depending on game types (e.g. fun, science etc.) currently supported by the API.
           </p>
           <h5 class="authentication__subtitle--way subtitle">
             GET <code>/api/v1/get-random?game_type=...</code>
@@ -169,6 +175,15 @@
             Useful when you want
             to fetch multiple entries from a specific category.
           </p>
+         <div class="highlight-box">
+            <p>
+              <strong><i class="fa-solid fa-circle-exclamation"></i> Tip:</strong>
+              Know the queryable categories by visiting the <code>/api/v1/get-categories?game_type=...</code> endpoint
+              and noting the categories available for each game.
+              If you try to visit <code>/api/v1/get-by-type</code> with a categories param that is unavailable,
+              it returns an empty list.
+            </p>
+          </div>
           <h2 class="endpoints__subtitle subtitle">Query Parameters</h2>
           <div class="table-container">
             <table class="parameter-table">
@@ -210,7 +225,7 @@
                   <td class="parameter-table__cell">string</td>
                   <td class="parameter-table__cell hidden-mobile">
                 Specifies the type of game to fetch (e.g., Would You Rather, Trivia, Did You Know).</td>
-                  <td class="parameter-table__cell"> No — only for <pre><code>/api/v1/get-by-type</code></pre></td>
+                  <td class="parameter-table__cell"> No — only for <pre><code>/api/v1/get-by-type</code></pre> and <pre><code>/api/v1/get-categories</code></pre></td>
                 </tr>
                 <tr class="parameter-table__row">
                   <td class="parameter-table__cell">category</td>
